@@ -22,7 +22,7 @@ let output = ''
       <div class="card">
         <ul id="news-articles">
             <li class="article">
-            <div class="article-img"><img src="${images}" class="card-img-top" alt="..."></div> 
+            <div><img src="${images}" class="article-img card-img-top" alt="Responsive image"></div> 
             <div class="card-body">
             <h2 class="article-title">${article.title}</h2>
             <p class="article-description">${article.description}</p>
@@ -64,7 +64,7 @@ if(data.totalResults != 0)
         <div class="card">
           <ul id="news-articles">
               <li class="article">
-              <div class="article-img"><img src="${images}" class="card-img-top" alt="..."></div> 
+              <div><img src="${images}" class="article-img card-img-top" alt="Responsive image"></div> 
               <div class="card-body">
               <h2 class="article-title">${article.title}</h2>
               <p class="article-description">${article.description}</p>
