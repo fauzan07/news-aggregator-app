@@ -58,9 +58,26 @@ input:-ms-input-placeholder {
   list-style: none;
 }
 
-.card-title {
+.article-img {
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+  padding-top: 1rem !important;
+}
+
+h2.article-title {
   font-size: 22px;
   font-weight: bold;
+  margin-bottom: .75rem;
+}
+
+.article-description:last-child {
+  margin-bottom: 0;
+}
+
+.article-link {
+  color: #0099CC;
+  float: right;
+  font-size: 12px;
 }
 
 @media only screen and (max-width: 600px) {

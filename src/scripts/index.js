@@ -19,21 +19,20 @@ let output = ''
         let images = article.urlToImage ? article.urlToImage : 'https://miro.medium.com/max/638/1*GCjELZsA3fvQPf4mWsZbAw.png';
     output += 
     `<div class="col-md-4 col-lg-3 col-xs-12">
-        <div class="card">
-            <ul id="news-articles">
-                <li class="article">
-                <li class="article-img">
-                <div class="px-3 pt-3"><img src="${images}" class="card-img-top" alt="..."></div></li> 
-                <div class="card-body">
-                <li class="article-title"><h2 class="card-title">${article.title}</h2></li>
-                <li class="article-description"><p class="card-text">${article.description}</p></li>
-                <li class="article-author"><div class="my-2"><p class="card-text"><small class="text-muted">${article.author}</small></p></div></li>
-                <li class="article-link"><a href="${article.url}" class="btn btn-primary" target="_blank">know more</a></li>
-                </div>
-                </li>
-            </ul>
-        </div>
-    </div>`
+      <div class="card">
+        <ul id="news-articles">
+            <li class="article">
+            <div class="article-img"><img src="${images}" class="card-img-top" alt="..."></div> 
+            <div class="card-body">
+            <h2 class="article-title">${article.title}</h2>
+            <p class="article-description">${article.description}</p>
+            
+            <a href="${article.url}" class="article-link" target="_blank"><span class="article-author">~${article.author}</span></a>
+            </div>
+            </li>
+        </ul>
+    </div>
+</div>`
     });
     output += '';
     document.getElementById('results').innerHTML = output;
@@ -62,21 +61,20 @@ if(data.totalResults != 0)
          
         output += 
         `<div class="col-md-4 col-lg-3 col-xs-12">
-            <div class="card">
-                <ul id="news-articles">
-                    <li class="article">
-                    <li class="article-img">
-                    <div class="px-3 pt-3"><img src="${images}" class="card-img-top" alt="..."></div></li> 
-                    <div class="card-body">
-                    <li class="article-title"><h2 class="card-title">${article.title}</h2></li>
-                    <li class="article-description"><p class="card-text">${article.description}</p></li>
-                    <li class="article-author"><div class="my-2"><p class="card-text"><small class="text-muted">${article.author}</small></p></div></li>
-                    <li class="article-link"><a href="${article.url}" class="btn btn-primary" target="_blank">know more</a></li>
-                    </div>
-                    </li>
-                </ul>
-            </div>
-        </div>`
+        <div class="card">
+          <ul id="news-articles">
+              <li class="article">
+              <div class="article-img"><img src="${images}" class="card-img-top" alt="..."></div> 
+              <div class="card-body">
+              <h2 class="article-title">${article.title}</h2>
+              <p class="article-description">${article.description}</p>
+              
+              <a href="${article.url}" class="article-link" target="_blank"><span class="article-author">~${article.author}</span></a>
+              </div>
+              </li>
+          </ul>
+      </div>
+  </div>`
     });
     output += '';
     document.getElementById('results').innerHTML = output;
