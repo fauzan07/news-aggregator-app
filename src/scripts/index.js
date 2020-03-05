@@ -18,22 +18,22 @@ let output = ''
         //check if images is equal to null
         let images = article.urlToImage ? article.urlToImage : 'https://miro.medium.com/max/638/1*GCjELZsA3fvQPf4mWsZbAw.png';
     output += 
-    `<div class="col-md-4 col-lg-3 col-xs-12">
-    <div class="card">
-      <ul id="news-articles">
-          <li class="article">
-          <div style="display:none"><img src="${images}" class="article-img" alt="Responsive image"></div> 
-          <div><img src="${images}" class="article-img card-img-top" alt="Responsive image"></div> 
-          <div class="card-body">
-          <h2 class="article-title">${article.title}</h2>
-          <p class="article-description">${article.description}</p>
-          
-          <a href="${article.url}" class="article-link" target="_blank"><span class="article-author">~${article.author}</span></a>
-          </div>
-          </li>
-      </ul>
-  </div>
-</div>`
+    `<div class="col-md-4 col-lg-4 col-xs-12">
+        <div class="card shadow my-3">
+        <ul id="news-articles">
+            <li class="article">
+            <div style="display:none"><img src="${images}" class="article-img" alt="Responsive image"></div> 
+            <div><img src="${images}" class="article-img card-img-top" alt="Responsive image"></div> 
+            <div class="card-body">
+            <h2 class="article-title">${article.title}</h2>
+            <p class="article-description">${article.description}</p>
+            
+            <a href="${article.url}" class="article-link" target="_blank"><span class="article-author">~${article.author}</span></a>
+            </div>
+            </li>
+        </ul>
+        </div>
+    </div>`
     });
     output += '';
     document.getElementById('results').innerHTML = output;
@@ -61,22 +61,22 @@ if(data.totalResults != 0)
         let images = article.urlToImage ? article.urlToImage : 'https://miro.medium.com/max/638/1*GCjELZsA3fvQPf4mWsZbAw.png';
          
         output += 
-        `<div class="col-md-4 col-lg-3 col-xs-12">
-        <div class="card">
-          <ul id="news-articles">
-              <li class="article">
-              <div style="display:none"><img src="${images}" class="article-img" alt="Responsive image"></div> 
-              <div><img src="${images}" class="article-img card-img-top" alt="Responsive image"></div> 
-              <div class="card-body">
-              <h2 class="article-title">${article.title}</h2>
-              <p class="article-description">${article.description}</p>
-              
-              <a href="${article.url}" class="article-link" target="_blank"><span class="article-author">~${article.author}</span></a>
-              </div>
-              </li>
-          </ul>
-      </div>
-  </div>`
+            `<div class="col-md-4 col-lg-4 col-xs-12">
+        <div class="card shadow my-3">
+        <ul id="news-articles">
+            <li class="article">
+            <div style="display:none"><img src="${images}" class="article-img" alt="Responsive image"></div> 
+            <div><img src="${images}" class="article-img card-img-top" alt="Responsive image"></div> 
+            <div class="card-body">
+            <h2 class="article-title">${article.title}</h2>
+            <p class="article-description">${article.description}</p>
+            
+            <a href="${article.url}" class="article-link" target="_blank"><span class="article-author">~${article.author}</span></a>
+            </div>
+            </li>
+        </ul>
+        </div>
+    </div>`
     });
     output += '';
     document.getElementById('results').innerHTML = output;
@@ -127,6 +127,14 @@ function showMessage(message, className){
     //timeout alert
     setTimeout(() => document.querySelector('.alert').remove
     (), 3000);
+}
+
+
+//truncate text
+function truncateText(text, limit){
+    const shortended = text.indexOf('',limit);
+    if(shortend == -1) return text;
+    return text.substring(0, shortended);
 }
 
 
