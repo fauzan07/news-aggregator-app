@@ -1,2 +1,72 @@
-@import "./reset.css";
+body {
+  background-color: gray;
+}
 
+h1 {
+  font-weight: bold;
+}
+
+body.light {
+  background-color: #fff;
+}
+
+body.light h1 {
+  color: #000;
+}
+
+body.light .form-control-underlined {
+  background-color: #fff;
+}
+
+.head_text {
+  color: #fff;
+}
+
+.form-control:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.form-control-underlined {
+  border-width: 0;
+  border-bottom-width: 1px;
+  border-radius: 0;
+  padding-left: 0;
+  background-color: gray;
+}
+
+input::-webkit-input-placeholder {
+  color: #000 !important;
+}
+
+input:-moz-placeholder {
+  /* Firefox 18- */
+  color: #000 !important;
+}
+
+input::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #000 !important;
+}
+
+input:-ms-input-placeholder {
+  color: #000 !important;
+}
+
+#news-articles {
+  padding-left: 0;
+  list-style: none;
+}
+
+.card-title {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 25px;
+    font-weight: bold;
+  }
+}
+/*# sourceMappingURL=index.css.map */
