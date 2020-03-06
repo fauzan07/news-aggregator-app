@@ -18,9 +18,9 @@ let output = ''
         //check if images is equal to null
         let images = article.urlToImage ? article.urlToImage : 'https://miro.medium.com/max/638/1*GCjELZsA3fvQPf4mWsZbAw.png';
     output += 
-    `<div class="col-md-4 col-lg-4 col-xs-12">
+    `
+    <div class="col-md-4 col-lg-4 col-xs-12">
         <div class="card shadow my-3">
-        <ul id="news-articles">
             <li class="article">
             <div style="display:none"><img src="${images}" class="article-img" alt="Responsive image"></div> 
             <div><img src="${images}" class="article-img card-img-top" alt="Responsive image"></div> 
@@ -31,12 +31,11 @@ let output = ''
             <a href="${article.url}" class="article-link" target="_blank"><span class="article-author">~${article.author}</span></a>
             </div>
             </li>
-        </ul>
         </div>
     </div>`
     });
     output += '';
-    document.getElementById('results').innerHTML = output;
+    document.getElementById('news-articles').innerHTML = output;
 }
 
 )
@@ -61,9 +60,9 @@ if(data.totalResults != 0)
         let images = article.urlToImage ? article.urlToImage : 'https://miro.medium.com/max/638/1*GCjELZsA3fvQPf4mWsZbAw.png';
          
         output += 
-            `<div class="col-md-4 col-lg-4 col-xs-12">
+            `
+     <div class="col-md-4 col-lg-4 col-xs-12">
         <div class="card shadow my-3">
-        <ul id="news-articles">
             <li class="article">
             <div style="display:none"><img src="${images}" class="article-img" alt="Responsive image"></div> 
             <div><img src="${images}" class="article-img card-img-top" alt="Responsive image"></div> 
@@ -74,15 +73,14 @@ if(data.totalResults != 0)
             <a href="${article.url}" class="article-link" target="_blank"><span class="article-author">~${article.author}</span></a>
             </div>
             </li>
-        </ul>
         </div>
     </div>`
     });
     output += '';
-    document.getElementById('results').innerHTML = output;
+    document.getElementById('news-articles').innerHTML = output;
 }else{
     //show error message
-    document.getElementById('results').innerHTML = '';
+    document.getElementById('news-articles').innerHTML = '';
     document.getElementById('noresultfound').innerHTML = 'No article was found based on the search.';
 
 }
