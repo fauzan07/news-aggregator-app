@@ -1,3 +1,5 @@
+https://fauzan07.github.io/news-aggregator-app/build/
+
 # Webpack Frontend Starterkit
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/wbkd/webpack-starter.svg)](https://greenkeeper.io/)
