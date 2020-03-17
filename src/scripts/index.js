@@ -1,22 +1,35 @@
 require('../styles/index.css');
 
+const spinner = document.getElementById("spinner");
+
+function showSpinner() {
+  spinner.className = "show";
+  setTimeout(() => {
+    spinner.className = spinner.className.replace("show", "");
+  }, 5000);
+}
+
+
 const apikey = 'd43c02da615244bbb9b90afd2ca37ae9';
 
 async function getNews()
 {
+    showSpinner()
     const url = 'https://newsapi.org/v2/top-headlines?country=in&apiKey=' + apikey;
     const response=await fetch(url);
     const user=await response.json();
     return user;
 }
 
+
 let news=getNews();
 console.log(news);
 news.then((data)=>{
-let output = ''
+    let output = ''
     data.articles.forEach(function(article){
         //check if images is equal to null
         let images = article.urlToImage ? article.urlToImage : 'https://miro.medium.com/max/638/1*GCjELZsA3fvQPf4mWsZbAw.png';
+        let author = article.author ? article.author : 'News-TV';
     output += 
     `
     <div class="col-md-4 col-lg-4 col-xs-12">
@@ -28,7 +41,7 @@ let output = ''
             <h2 class="article-title">${article.title}</h2>
             <p class="article-description">${article.description}</p>
             
-            <a href="${article.url}" class="article-link" target="_blank"><span class="article-author">~${article.author}</span></a>
+            <a href="${article.url}" class="article-link" target="_blank"><span class="article-author">~${author}</sthorpan></a>
             </div>
             </li>
         </div>
@@ -42,9 +55,7 @@ let output = ''
 
 //search news
 function searchNews() {
-
-var searchTerm = document.getElementById('search').value;
-    
+var searchTerm = document.getElementById('search').value;  
 const url = 'https://newsapi.org/v2/everything?q=' + searchTerm + '&apiKey=' + apikey;
 
 fetch(url)
@@ -58,7 +69,7 @@ if(data.totalResults != 0)
     data.articles.forEach(function(article){
         //check if images is equal to null
         let images = article.urlToImage ? article.urlToImage : 'https://miro.medium.com/max/638/1*GCjELZsA3fvQPf4mWsZbAw.png';
-         
+        let author = article.author ? article.author : 'News-TV';
         output += 
             `
      <div class="col-md-4 col-lg-4 col-xs-12">
@@ -70,7 +81,7 @@ if(data.totalResults != 0)
             <h2 class="article-title">${article.title}</h2>
             <p class="article-description">${article.description}</p>
             
-            <a href="${article.url}" class="article-link" target="_blank"><span class="article-author">~${article.author}</span></a>
+            <a href="${article.url}" class="article-link" target="_blank"><span class="article-author">~${author}</span></a>
             </div>
             </li>
         </div>
