@@ -53,7 +53,7 @@ news.then((data)=>{
     document.getElementById('news-articles').innerHTML = output;
 }
 
-)
+);
 
 //search news
 function searchNews() {
