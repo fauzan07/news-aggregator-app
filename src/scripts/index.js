@@ -10,7 +10,9 @@ function showSpinner() {
 }
 
 
-const apikey = 'd43c02da615244bbb9b90afd2ca37ae9';
+// const apikey = 'd43c02da615244bbb9b90afd2ca37ae9';
+
+const apikey = '3429ec34cbf645c6bc884346206c1fe9';
 
 async function getNews()
 {
